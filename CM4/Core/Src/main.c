@@ -679,14 +679,138 @@ void MX_USART3_UART_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, DigiIN_OUT_Z_Pin|Direction_Z_Pin|LD2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(Ready_Z_GPIO_Port, Ready_Z_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, USB_OTG_FS_PWR_EN_Pin|DigiIN_OUT_X_Pin|Ready_X_Pin|Enable_PWR_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, Vaccuum_Valve_Pin|Vaccuum_Pump_Pin|Solenoid_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(Direction_X_GPIO_Port, Direction_X_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : DigiIN_OUT_Z_Pin Direction_Z_Pin LD2_Pin */
+  GPIO_InitStruct.Pin = DigiIN_OUT_Z_Pin|Direction_Z_Pin|LD2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : B1_Pin Rotary_Switch_C2_Pin */
+  GPIO_InitStruct.Pin = B1_Pin|Rotary_Switch_C2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Rotary_Switch_C8_Pin */
+  GPIO_InitStruct.Pin = Rotary_Switch_C8_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Rotary_Switch_C8_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Ready_Z_Pin */
+  GPIO_InitStruct.Pin = Ready_Z_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(Ready_Z_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Rotary_Switch_C1_Pin */
+  GPIO_InitStruct.Pin = Rotary_Switch_C1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Rotary_Switch_C1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LD1_Pin LD3_Pin */
+  GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Rotary_Switch_C4_Pin */
+  GPIO_InitStruct.Pin = Rotary_Switch_C4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Rotary_Switch_C4_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Homing_Z_Pin */
+  GPIO_InitStruct.Pin = Homing_Z_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Homing_Z_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : GPIO_EXTI14_Pin */
+  GPIO_InitStruct.Pin = GPIO_EXTI14_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIO_EXTI14_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : Pushbutton_Rotary_Switch_Pin Homing_X_Pin */
+  GPIO_InitStruct.Pin = Pushbutton_Rotary_Switch_Pin|Homing_X_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : Endstop_X_Pin Endstop_Z_Pin */
+  GPIO_InitStruct.Pin = Endstop_X_Pin|Endstop_Z_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : USB_OTG_FS_PWR_EN_Pin DigiIN_OUT_X_Pin Ready_X_Pin Enable_PWR_Pin */
+  GPIO_InitStruct.Pin = USB_OTG_FS_PWR_EN_Pin|DigiIN_OUT_X_Pin|Ready_X_Pin|Enable_PWR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : Vaccuum_Valve_Pin Vaccuum_Pump_Pin Solenoid_Pin */
+  GPIO_InitStruct.Pin = Vaccuum_Valve_Pin|Vaccuum_Pump_Pin|Solenoid_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Coin_INT_Pin */
+  GPIO_InitStruct.Pin = Coin_INT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Coin_INT_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Read_EMO_Pin */
+  GPIO_InitStruct.Pin = Read_EMO_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Read_EMO_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Direction_X_Pin */
+  GPIO_InitStruct.Pin = Direction_X_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(Direction_X_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
