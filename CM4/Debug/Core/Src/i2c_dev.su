@@ -1,3 +1,0 @@
-../Core/Src/i2c_dev.c:10:19:i2c_CheckDev	24	static
-../Core/Src/i2c_dev.c:17:19:i2c_Transmit	48	static
-../Core/Src/i2c_dev.c:24:19:i2c_Receive	48	static

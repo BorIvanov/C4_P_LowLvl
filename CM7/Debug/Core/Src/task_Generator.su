@@ -1,3 +1,0 @@
-../Core/Src/task_Generator.c:16:6:initTaskGenerator	24	static
-../Core/Src/task_Generator.c:27:6:taskToDo	16	static
-../Core/Src/task_Generator.c:40:6:HAL_HSEM_FreeCallback	16	static

@@ -61,8 +61,8 @@ all: main-build
 main-build: 4in1row_Demo_CM4.elf secondary-outputs
 
 # Tool invocations
-4in1row_Demo_CM4.elf 4in1row_Demo_CM4.map: $(OBJS) $(USER_OBJS) C:\Users\Pascal\STM32CubeIDE\workspace_1.8.0\4in1row_Demo\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "4in1row_Demo_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Pascal\STM32CubeIDE\workspace_1.8.0\4in1row_Demo\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4in1row_Demo_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+4in1row_Demo_CM4.elf 4in1row_Demo_CM4.map: $(OBJS) $(USER_OBJS) D:\University\Fontys\Year5\Internship\STM32H_Example\ Codes\13_03_Low_Level_Software\Dual-core\ Low\ Level\ Software\C4_P_LowLvl\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "4in1row_Demo_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\University\Fontys\Year5\Internship\STM32H_Example Codes\13_03_Low_Level_Software\Dual-core Low Level Software\C4_P_LowLvl\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4in1row_Demo_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

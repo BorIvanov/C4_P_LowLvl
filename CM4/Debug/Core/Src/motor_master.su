@@ -1,3 +1,0 @@
-../Core/Src/motor_master.c:9:6:initMotors	8	static
-../Core/Src/motor_master.c:14:9:MoveToPos	16	static
-../Core/Src/motor_master.c:19:9:HomeMotors	24	static
