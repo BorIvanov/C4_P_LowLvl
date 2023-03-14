@@ -51,23 +51,40 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
+void MX_TIM13_Init(void);
+void MX_TIM4_Init(void);
 
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define B1_Pin GPIO_PIN_13
-#define B1_GPIO_Port GPIOC
-#define B1_EXTI_IRQn EXTI15_10_IRQn
-#define LD1_Pin GPIO_PIN_0
-#define LD1_GPIO_Port GPIOB
-#define LD3_Pin GPIO_PIN_14
-#define LD3_GPIO_Port GPIOB
+#define PWM_Servo_Rotate_Pin GPIO_PIN_8
+#define PWM_Servo_Rotate_GPIO_Port GPIOF
+#define PWM_Servo_Slider_Pin GPIO_PIN_9
+#define PWM_Servo_Slider_GPIO_Port GPIOF
+#define Vaccuum_Sensor_Pin GPIO_PIN_4
+#define Vaccuum_Sensor_GPIO_Port GPIOA
+#define Encoder_X_A_Pin GPIO_PIN_6
+#define Encoder_X_A_GPIO_Port GPIOA
+#define PWM_X_Pin GPIO_PIN_10
+#define PWM_X_GPIO_Port GPIOB
+#define PWM_Z_Pin GPIO_PIN_11
+#define PWM_Z_GPIO_Port GPIOB
 #define STLINK_RX_Pin GPIO_PIN_8
 #define STLINK_RX_GPIO_Port GPIOD
 #define STLINK_TX_Pin GPIO_PIN_9
 #define STLINK_TX_GPIO_Port GPIOD
+#define Encoder_Z_A_Pin GPIO_PIN_12
+#define Encoder_Z_A_GPIO_Port GPIOD
+#define Encoder_Z_B_Pin GPIO_PIN_13
+#define Encoder_Z_B_GPIO_Port GPIOD
+#define Encoder_X_B_Pin GPIO_PIN_5
+#define Encoder_X_B_GPIO_Port GPIOB
+#define RPI_UART_Tx_Pin GPIO_PIN_6
+#define RPI_UART_Tx_GPIO_Port GPIOB
+#define RPI_UART_Rx_Pin GPIO_PIN_7
+#define RPI_UART_Rx_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
