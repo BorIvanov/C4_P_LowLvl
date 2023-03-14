@@ -1,0 +1,5 @@
+../Core/Src/COM_controlller.c:13:6:Init_COM_controller	24	static
+../Core/Src/COM_controlller.c:20:6:RPI_Request_Move	56	static
+../Core/Src/COM_controlller.c:29:6:HAL_UART_RxCpltCallback	48	static
+../Core/Src/COM_controlller.c:38:6:UART_WriteString	16	static
+../Core/Src/COM_controlller.c:42:6:UART_WriteValue	32	static

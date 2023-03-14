@@ -1,0 +1,3 @@
+../Core/Src/VCNL4010.c:10:6:VCNL4010_Init	32	static
+../Core/Src/VCNL4010.c:24:10:VCNL4010_ReceiveProxy	32	static
+../Core/Src/VCNL4010.c:38:10:VCNL4010_Create	32	static
