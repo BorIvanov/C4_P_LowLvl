@@ -219,7 +219,7 @@ Error_Handler();
 		  }
 		  if(substateRM == SUBSTATE_RM_REC_MOVE){
 			  uint8_t buf[28];
-			  taskToDo(TASK_ROBOT_MOVE);
+			  taskToDo(TASK_ROBOT_MOVE); //coment
 			  substateRM = SUBSTATE_RM_WAIT_CM4;
 			  UART_WriteString(&huart3, "Start robot move\r\n\n");
 			  sprintf((char*) buf, "Enter coin in column : %.*s\r\n\n", 2, Rx_data);
